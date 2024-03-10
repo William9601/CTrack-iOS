@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Root
 
 @main
 struct CTrack_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }

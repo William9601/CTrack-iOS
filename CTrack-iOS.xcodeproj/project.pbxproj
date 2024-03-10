@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		28C462D32B9E075700F847A6 /* CTrack_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C462D22B9E075700F847A6 /* CTrack_iOSApp.swift */; };
-		28C462D52B9E075700F847A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C462D42B9E075700F847A6 /* ContentView.swift */; };
 		28C462D72B9E075900F847A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C462D62B9E075900F847A6 /* Assets.xcassets */; };
 		28C462DA2B9E075900F847A6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C462D92B9E075900F847A6 /* Preview Assets.xcassets */; };
+		28C462E42B9E128A00F847A6 /* Root in Frameworks */ = {isa = PBXBuildFile; productRef = 28C462E32B9E128A00F847A6 /* Root */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		28C462CF2B9E075700F847A6 /* CTrack-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CTrack-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C462D22B9E075700F847A6 /* CTrack_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTrack_iOSApp.swift; sourceTree = "<group>"; };
-		28C462D42B9E075700F847A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		28C462D62B9E075900F847A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28C462D92B9E075900F847A6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		28C462E02B9E089300F847A6 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
@@ -28,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28C462E42B9E128A00F847A6 /* Root in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +41,7 @@
 				28C462E12B9E08D100F847A6 /* Common */,
 				28C462D12B9E075700F847A6 /* CTrack-iOS */,
 				28C462D02B9E075700F847A6 /* Products */,
+				28C462E22B9E128A00F847A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				28C462D22B9E075700F847A6 /* CTrack_iOSApp.swift */,
-				28C462D42B9E075700F847A6 /* ContentView.swift */,
 				28C462D62B9E075900F847A6 /* Assets.xcassets */,
 				28C462D82B9E075900F847A6 /* Preview Content */,
 			);
@@ -69,6 +69,13 @@
 				28C462D92B9E075900F847A6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		28C462E22B9E128A00F847A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +94,9 @@
 			dependencies = (
 			);
 			name = "CTrack-iOS";
+			packageProductDependencies = (
+				28C462E32B9E128A00F847A6 /* Root */,
+			);
 			productName = "CTrack-iOS";
 			productReference = 28C462CF2B9E075700F847A6 /* CTrack-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -141,7 +151,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28C462D52B9E075700F847A6 /* ContentView.swift in Sources */,
 				28C462D32B9E075700F847A6 /* CTrack_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +357,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		28C462E32B9E128A00F847A6 /* Root */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Root;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 28C462C72B9E075700F847A6 /* Project object */;
 }
