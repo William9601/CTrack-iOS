@@ -15,6 +15,6 @@ public struct PrimaryButton: View {
     public var body: some View {
         Button(title, action: action)
             .buttonStyle(.borderedProminent)
-            .background(Color.blue)
+            .background(Color("CTAlert"))
     }
 }
