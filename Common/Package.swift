@@ -11,11 +11,16 @@ let package = Package(
         .library(
             name: "Components",
             targets: ["Components"]),
+        
+//        If you want it exposed outside of Common package:
+//            .library(
+//                name: "Assets",
+//                targets: ["Assets"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "Components"),
+        .target(name: "Assets"),
+        .target(name: "Components", dependencies: ["Assets"]),
     ]
 )

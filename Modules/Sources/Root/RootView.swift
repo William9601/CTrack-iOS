@@ -13,7 +13,29 @@ public struct RootView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             PrimaryButton(title: "Some Title", action: {})
+            CTCard {
+                HStack {
+                    VStack {
+                        Text("Total").font(.title3).foregroundColor(.ctSecondary)
+                        Text("£3,500").font(.title).foregroundColor(.ctSecondary)
+                    }
+                }
+            }.frame(width: 370, height: 90)
         }
         .padding()
     }
 }
+
+//struct MyView: View {
+//    @State private var currentTheme: Themes = .midnight // Set initial theme
+//    
+//    var body: some View {
+//        VStack {
+//            // Your UI components here
+//        }
+//        .environment(\.theme, currentTheme)
+//        .onAppear {
+//            ThemeManager.shared.setTheme(currentTheme)
+//        }
+//    }
+//}
