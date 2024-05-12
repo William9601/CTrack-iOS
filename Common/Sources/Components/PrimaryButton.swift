@@ -18,6 +18,6 @@ public struct PrimaryButton: View {
             .buttonStyle(.borderedProminent)
             .background(Color(.black))
 //            .foregroundColor(Color.ctPrimary)
-            .foregroundColor(.ctPrimary)
+            .foregroundColor(.theme.ctGreen)
     }
 }

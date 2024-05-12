@@ -17,7 +17,7 @@ public struct CTCard<Content: View>: View {
     
     public var body: some View {
         RoundedRectangle(cornerRadius: 10)
-            .fill(Color.ctPrimary)
+            .fill(Color.theme.ctBackgroundColor)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.gray, lineWidth: 1)

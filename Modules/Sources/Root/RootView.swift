@@ -16,8 +16,8 @@ public struct RootView: View {
             CTCard {
                 HStack {
                     VStack {
-                        Text("Total").font(.title3).foregroundColor(.ctSecondary)
-                        Text("£3,500").font(.title).foregroundColor(.ctSecondary)
+                        Text("Total").font(.title3).foregroundColor(.theme.ctRed)
+                        Text("£3,500").font(.title).foregroundColor(.theme.ctSecondaryText)
                     }
                 }
             }.frame(width: 370, height: 90)
