@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CTColours: CTColourProtocol {
+struct CTColours: CTColorProtocol {
     var ctPrimary: Color { Color("ctPrimary") }
     var ctSecondary: Color { Color("ctSecondary") }
     var ctAlert: Color { Color("ctAlert") }

@@ -8,8 +8,6 @@
 import SwiftUI
 
 extension Color {
-    // MARK: - Colour tokens
-    
     public static let ctPrimary = Color("ctPrimary")
     public static let ctSecondary = Color("ctSecondary")
     public static let ctAlert = Color("ctAlert")

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public protocol CTColourProtocol {
+public protocol CTColorProtocol {
     var ctPrimary: Color { get }
     var ctSecondary: Color { get }
     var ctAlert: Color { get }
