@@ -10,6 +10,3 @@ import SwiftUI
 extension Color {
     public static let theme = MidnightTheme()
 }
-
-
-

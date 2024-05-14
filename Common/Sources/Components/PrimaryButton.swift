@@ -2,7 +2,7 @@
 // https://docs.swift.org/swift-book
 
 import SwiftUI
-//import Assets
+import Assets
 
 public struct PrimaryButton: View {
     let title: String
@@ -17,7 +17,6 @@ public struct PrimaryButton: View {
         Button(title, action: action)
             .buttonStyle(.borderedProminent)
             .background(Color(.black))
-//            .foregroundColor(Color.ctPrimary)
             .foregroundColor(.theme.ctGreen)
     }
 }
