@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Assets
+import ThemeManager
 
 public struct CTCard<Content: View>: View {
     var content: Content
@@ -17,7 +17,7 @@ public struct CTCard<Content: View>: View {
     
     public var body: some View {
         RoundedRectangle(cornerRadius: 10)
-            .fill(Color.theme.ctBackgroundColor)
+            .fill(Color.theme.ctAccent)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.gray, lineWidth: 1)

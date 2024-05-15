@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public protocol ThemeManagerProtocol {
-        var colour: CTColourProtocol { get }
+public protocol ThemeProtocol {
+        var color: CTColorProtocol { get }
         var dimensions: CTDimensionsProtocol { get }
 }
