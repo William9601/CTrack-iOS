@@ -17,13 +17,11 @@ let package = Package(
         .package(name: "Common", path: "../Common")
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "Root",
-            dependencies: [
-                .product(name: "Components", package: "Common")
+            name: "Root", dependencies: [
+                .product(name: "Components", package: "Common"), "Views"
             ]
         ),
+        .target(name: "Views"),
     ]
 )

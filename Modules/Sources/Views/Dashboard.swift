@@ -1,10 +1,17 @@
 //
-//  File.swift
-//  
+//  Dashboard.swift
+//
 //
 //  Created by William von Arend on 09/05/2024.
 //
 
 import Foundation
+import SwiftUI
+import Components
 
-// create the home dashboard with my shared components
+public struct Dashboard: View {
+    public init() {}
+    public var body: some View {
+        TotalBox()
+    }
+}
