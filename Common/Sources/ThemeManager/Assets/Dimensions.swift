@@ -7,20 +7,32 @@
 
 import SwiftUI
 
-public protocol CTDimensionsProtocol {
-    var borderRadius: Float { get }
-    var space0: Float { get }
-    var space1: Float { get }
-    var space2: Float { get }
-    var space3: Float { get }
+extension CGFloat {
+    public static let space0: CGFloat = CTDimensions().space0
+    public static let space1: CGFloat = CTDimensions().space1
+    public static let space2: CGFloat = CTDimensions().space2
+    public static let space3: CGFloat = CTDimensions().space3
+    public static let space4: CGFloat = CTDimensions().space3
+    public static let borderRadius: CGFloat = CTDimensions().borderRadius
+    public static let borderWidth: CGFloat = CTDimensions().borderWidth
 }
 
-public struct CTDimensions: CTDimensionsProtocol {
-    public init() {}
+public protocol CTDimensionsProtocol {
+    var space0: CGFloat { get }
+    var space1: CGFloat { get }
+    var space2: CGFloat { get }
+    var space3: CGFloat { get }
+    var space4: CGFloat { get }
+    var borderRadius: CGFloat { get }
+    var borderWidth: CGFloat { get }
+}
 
-    public var borderRadius: Float { 4 }
-    public var space0: Float { 0 }
-    public var space1: Float { 2 }
-    public var space2: Float { 4 }
-    public var space3: Float { 6 }
+struct CTDimensions: CTDimensionsProtocol {
+    var space0: CGFloat { 0 }
+    var space1: CGFloat { 2 }
+    var space2: CGFloat { 4 }
+    var space3: CGFloat { 6 }
+    var space4: CGFloat { 6 }
+    var borderRadius: CGFloat { 4 }
+    var borderWidth: CGFloat { 1 }
 }

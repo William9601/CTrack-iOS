@@ -9,20 +9,14 @@ public struct RootView: View {
 
     public var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-//            PrimaryButton(title: "Some Title", action: {})
-            CTCard {
-                HStack {
-                    VStack {
-                        Text("Total").font(.title3).foregroundColor(Color.theme.ctBackgroundColor)
-                        Text("£3,500").font(.title).foregroundColor(Color.theme.ctGreen)
-                    }
+            CTCard {       
+                VStack {
+                    Text("Total").font(.title3).foregroundColor(Color.theme.ctRed)
+                    Text("£3,500").font(.title).foregroundColor(Color.theme.ctGreen)
                 }
+
             }.frame(width: 370, height: 90)
-        }
-        .padding()
+        }.padding()
     }
 }
 
