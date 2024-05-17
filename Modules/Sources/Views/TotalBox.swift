@@ -16,6 +16,7 @@ public struct TotalBox: View {
                     Text("Total")
                     Text("£3,500")
                 }
+                Spacer()
                 VStack {
                     Text("Profit")
                     Text("£150")
@@ -27,6 +28,8 @@ public struct TotalBox: View {
 
 struct TotalBox_Previews: PreviewProvider {
     static var previews: some View {
-        TotalBox()
+        HStack {
+            TotalBox()
+        }.frame(width: 200)
     }
 }

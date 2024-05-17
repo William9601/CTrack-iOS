@@ -6,10 +6,22 @@
 //
 
 import SwiftUI
+import Components
 
-struct PortfolioBox: View {
-    var body: some View {
-        Text("Ho")
+public struct PortfolioBox: View {
+    public init() {}
+    
+    public var body: some View {
+        CTCard {
+            HStack {
+                PortfolioDataChunk(alignmnet: .leading, title: "Title", subtext: "Subtext", icon: Image(systemName: "checkmark.circle"))
+                Spacer()
+                VStack(alignment: .leading) {
+                    Text("£2500")
+                    Text("£150 3.5%")
+                }
+            }
+        }
     }
 }
 
