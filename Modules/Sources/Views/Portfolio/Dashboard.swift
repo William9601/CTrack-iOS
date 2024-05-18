@@ -12,12 +12,10 @@ public struct Dashboard: View {
     public init() {}
     public var body: some View {
         VStack {
-            HStack {
-                TotalBox()
-            }.frame(width: 200)
-            
+            TotalBox()
+            PortfolioBox()
+            Spacer()
         }
-        
     }
 }
 

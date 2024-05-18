@@ -43,7 +43,7 @@ extension View {
         modifier(RoundedBackground(backgroundColor: backgroundColor,
                                    borderColor: borderColor,
                                    borderRadius: borderRadius,
-                                   stroke: StrokeStyle(lineWidth: .borderWidth)))
+                                   stroke: StrokeStyle(lineWidth: .ctBorderWidth)))
     }
 }
 

@@ -57,8 +57,8 @@ public struct PortfolioDataChunk: View {
                 .scaledToFill()
                 .fixedSize()
                 .foregroundColor(.black)
-                .frame(height: .iconS)
-                .padding(.trailing, .space1)
+                .frame(height: .ctIconS)
+                .padding(.trailing, .ctSpace1)
         }
     }
 }

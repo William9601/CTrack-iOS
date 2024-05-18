@@ -8,18 +8,18 @@
 import SwiftUI
 
 extension CGFloat {
-    public static let space0: CGFloat = CTDimensions().space0
-    public static let space1: CGFloat = CTDimensions().space1
-    public static let space2: CGFloat = CTDimensions().space2
-    public static let space3: CGFloat = CTDimensions().space3
-    public static let space4: CGFloat = CTDimensions().space3
-    public static let borderRadius: CGFloat = CTDimensions().borderRadius
-    public static let borderWidth: CGFloat = CTDimensions().borderWidth
-    public static let iconXS: CGFloat = CTDimensions().iconXS // Should make an icon container component
-    public static let iconS: CGFloat = CTDimensions().iconS
-    public static let iconM: CGFloat = CTDimensions().iconM
-    public static let iconL: CGFloat = CTDimensions().iconL
-    public static let iconXL: CGFloat = CTDimensions().iconXL
+    public static let ctSpace0: CGFloat = CTDimensions().space0
+    public static let ctSpace1: CGFloat = CTDimensions().space1
+    public static let ctSpace2: CGFloat = CTDimensions().space2
+    public static let ctSpace3: CGFloat = CTDimensions().space3
+    public static let ctSpace4: CGFloat = CTDimensions().space3
+    public static let ctBorderRadius: CGFloat = CTDimensions().borderRadius
+    public static let ctBorderWidth: CGFloat = CTDimensions().borderWidth
+    public static let ctIconXS: CGFloat = CTDimensions().iconXS // Should make an icon container component
+    public static let ctIconS: CGFloat = CTDimensions().iconS
+    public static let ctIconM: CGFloat = CTDimensions().iconM
+    public static let ctIconL: CGFloat = CTDimensions().iconL
+    public static let ctIconXL: CGFloat = CTDimensions().iconXL
 }
 
 public protocol CTDimensionsProtocol {

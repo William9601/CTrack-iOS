@@ -19,7 +19,7 @@ public struct CTCard<Content: View>: View {
     public var body: some View {
         VStack {
             content
-                .padding(.space3)
+                .padding(.ctSpace3)
         }.roundedBackground(backgroundColor: .theme.ctBackgroundColor,
                             borderColor: .theme.ctAccent,
                             borderRadius: 4)

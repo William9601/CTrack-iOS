@@ -5,15 +5,25 @@ import SwiftUI
 import Components
 import Views
 
-
-
 public struct RootView: View {
     public init() {}
 
     public var body: some View {
-        VStack {
-            Dashboard()
-            PortfolioBox()
+        NavigationView {
+             LivePrices()
+                .navigationBarHidden(true)
         }
     }
 }
+
+//public struct RootView: App {
+//    public init() {}
+//
+//    public var body: some Scene {
+//        WindowGroup {
+//            VStack {
+//                Dashboard()
+//            }.padding(.horizontal, 25)
+//        }
+//    }
+//}
