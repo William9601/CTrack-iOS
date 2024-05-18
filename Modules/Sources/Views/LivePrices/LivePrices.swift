@@ -21,32 +21,38 @@ public struct LivePrices: View {
             
             //content layer
             VStack {
-                HStack {
-                    withAnimation(.none) {
-                        CircleButton(iconName: showPortfolio ? "plus" : "info")
-                            .background(
-                                CircleButtonAnimation(animate: $showPortfolio)
-                            )
-                    }
-                    
-                    Spacer()
-                    withAnimation(.none) {
-                        Text(showPortfolio ? "Portfolio" :"Live Prices")
-                            .font(.headline)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.theme.ctAccent)
-                    }
-                    Spacer()
-                    CircleButton(iconName: "chevron.right")
-                        .rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
-                        .onTapGesture {
-                            withAnimation(.spring) {
-                                showPortfolio.toggle()
-                            }
-                        }
-                }
+                header
                 Spacer(minLength: 0)
-            }.padding(.horizontal, .ctSpace3)
+            }
         }
     }
 }
+
+extension LivePrices {
+    private var header: some View {
+        HStack {
+            withAnimation(.none) {
+                CircleButton(iconName: showPortfolio ? "plus" : "info")
+                    .background(
+                        CircleButtonAnimation(animate: $showPortfolio)
+                    )
+            }
+            
+            Spacer()
+            withAnimation(.none) {
+                Text(showPortfolio ? "Portfolio" :"Live Prices")
+                    .font(.headline)
+                    .fontWeight(.heavy)
+                    .foregroundColor(.theme.ctAccent)
+            }
+            Spacer()
+            CircleButton(iconName: "chevron.right")
+                .rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
+                .onTapGesture {
+                    withAnimation(.spring) {
+                        showPortfolio.toggle()
+                    }
+                }
+        }.padding(.horizontal, .ctSpace3)
+    }
+} 
