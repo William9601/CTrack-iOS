@@ -9,13 +9,13 @@ import SwiftUI
 import Common
 import ThemeManager
 
-public struct PortfolioDataChunk: View {
-    let alignmnet: PortfolioDataChunkAlignment
+public struct CTDataChunk: View {
+    let alignmnet: CTDataChunkAlignment
     let title: String
     let subtext: String?
     let icon: Image?
     
-    public init(alignmnet: PortfolioDataChunkAlignment,
+    public init(alignmnet: CTDataChunkAlignment,
                 title: String,
                 subtext: String?,
                 icon: Image?) {
@@ -63,9 +63,9 @@ public struct PortfolioDataChunk: View {
     }
 }
 
-struct PortfolioDataChunk_Previews: PreviewProvider {
+struct CTDataChunk_Previews: PreviewProvider {
     static var previews: some View {
-        PortfolioDataChunk(alignmnet: .leading, 
+        CTDataChunk(alignmnet: .leading,
                            title: "Label",
                            subtext: "Subtext",
                            icon: Image(systemName: "checkmark.circle"))

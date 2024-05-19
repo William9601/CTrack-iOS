@@ -15,7 +15,7 @@ public struct PortfolioBox: View {
         CTCard {
             VStack {
                 HStack {
-                    PortfolioDataChunk(alignmnet: .leading, title: "Title", subtext: "Subtext", icon: Image(systemName: "checkmark.circle"))
+                    CTDataChunk(alignmnet: .leading, title: "Title", subtext: "Subtext", icon: Image(systemName: "checkmark.circle"))
                     Spacer()
                     VStack(alignment: .leading) {
                         Text("£2500")

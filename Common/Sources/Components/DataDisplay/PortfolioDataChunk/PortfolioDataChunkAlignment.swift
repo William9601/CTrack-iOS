@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public enum PortfolioDataChunkAlignment {
+public enum CTDataChunkAlignment {
     case leading
     case trailing
     

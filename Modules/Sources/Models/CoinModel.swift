@@ -5,6 +5,8 @@
 //  Created by William von Arend on 19/05/2024.
 //
 
+import Foundation
+
 // CoinGecko API info
 /*
  URL: https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h
@@ -48,8 +50,10 @@
  
  */
 
-struct CoinModel: Identifiable, Codable {
-    let id, symbol, name: String
+public struct CoinModel: Identifiable, Codable {
+    public let id: String
+    let symbol: String
+    let name: String
     let image: String
     let currentPrice: Double
     let marketCap, marketCapRank, fullyDilutedValuation: Double?
@@ -67,6 +71,37 @@ struct CoinModel: Identifiable, Codable {
     let sparklineIn7D: SparklineIn7D?
     let priceChangePercentage24HInCurrency: Double?
     let currentHoldings: Double? // not part of the json data but we will store how many of the coin the user has
+    
+    public init(id: String, symbol: String, name: String, image: String, currentPrice: Double, marketCap: Double?, marketCapRank: Double?, fullyDilutedValuation: Double?, totalVolume: Double?, high24H: Double?, low24H: Double?, priceChange24H: Double?, priceChangePercentage24H: Double?, marketCapChange24H: Double?, marketCapChangePercentage24H: Double?, circulatingSupply: Double?, totalSupply: Double?, maxSupply: Double?, ath: Double?, athChangePercentage: Double?, athDate: String?, atl: Double?, atlChangePercentage: Double?, atlDate: String?, lastUpdated: String?, sparklineIn7D: SparklineIn7D?, priceChangePercentage24HInCurrency: Double?, currentHoldings: Double?) {
+        self.id = id
+        self.symbol = symbol
+        self.name = name
+        self.image = image
+        self.currentPrice = currentPrice
+        self.marketCap = marketCap
+        self.marketCapRank = marketCapRank
+        self.fullyDilutedValuation = fullyDilutedValuation
+        self.totalVolume = totalVolume
+        self.high24H = high24H
+        self.low24H = low24H
+        self.priceChange24H = priceChange24H
+        self.priceChangePercentage24H = priceChangePercentage24H
+        self.marketCapChange24H = marketCapChange24H
+        self.marketCapChangePercentage24H = marketCapChangePercentage24H
+        self.circulatingSupply = circulatingSupply
+        self.totalSupply = totalSupply
+        self.maxSupply = maxSupply
+        self.ath = ath
+        self.athChangePercentage = athChangePercentage
+        self.athDate = athDate
+        self.atl = atl
+        self.atlChangePercentage = atlChangePercentage
+        self.atlDate = atlDate
+        self.lastUpdated = lastUpdated
+        self.sparklineIn7D = sparklineIn7D
+        self.priceChangePercentage24HInCurrency = priceChangePercentage24HInCurrency
+        self.currentHoldings = currentHoldings
+    }
     
     enum CodingKeys: String, CodingKey { // Maps camel case to the snake case used in the api return
         case id, symbol, name, image
@@ -107,4 +142,13 @@ struct CoinModel: Identifiable, Codable {
     var rank: Int {
         return Int(marketCapRank ?? 0)
     }
+}
+
+public struct SparklineIn7D: Codable {
+    let price: [Double]?
+    
+    public init(price: [Double]?) {
+        self.price = price
+    }
+    
 }
