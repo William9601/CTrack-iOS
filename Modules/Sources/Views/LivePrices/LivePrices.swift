@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Components
+import Extensions
 
 public struct LivePrices: View {
     @State private var showPortfolio = false
@@ -22,6 +23,7 @@ public struct LivePrices: View {
             //content layer
             VStack {
                 header
+                CoinRowView(coin: DeveloperPreview.instance.coin, showHoldingsColumn: false)
                 Spacer(minLength: 0)
             }
         }

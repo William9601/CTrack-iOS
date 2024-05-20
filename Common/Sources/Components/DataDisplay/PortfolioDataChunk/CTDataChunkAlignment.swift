@@ -11,7 +11,7 @@ public enum CTDataChunkAlignment {
     case leading
     case trailing
     
-    public var alignment: HorizontalAlignment {
+    public var labelAlignment: HorizontalAlignment {
         switch self {
         case .leading: .leading
         case .trailing: .trailing

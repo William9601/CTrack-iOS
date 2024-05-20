@@ -52,25 +52,25 @@ import Foundation
 
 public struct CoinModel: Identifiable, Codable {
     public let id: String
-    let symbol: String
-    let name: String
-    let image: String
-    let currentPrice: Double
-    let marketCap, marketCapRank, fullyDilutedValuation: Double?
-    let totalVolume, high24H, low24H: Double?
-    let priceChange24H: Double?
-    let priceChangePercentage24H: Double?
-    let marketCapChange24H: Double?
-    let marketCapChangePercentage24H: Double?
-    let circulatingSupply, totalSupply, maxSupply, ath: Double?
-    let athChangePercentage: Double?
-    let athDate: String?
-    let atl, atlChangePercentage: Double?
-    let atlDate: String?
-    let lastUpdated: String?
-    let sparklineIn7D: SparklineIn7D?
-    let priceChangePercentage24HInCurrency: Double?
-    let currentHoldings: Double? // not part of the json data but we will store how many of the coin the user has
+    public let symbol: String
+    public let name: String
+    public let image: String
+    public let currentPrice: Double
+    public let marketCap, marketCapRank, fullyDilutedValuation: Double?
+    public let totalVolume, high24H, low24H: Double?
+    public let priceChange24H: Double?
+    public let priceChangePercentage24H: Double?
+    public let marketCapChange24H: Double?
+    public let marketCapChangePercentage24H: Double?
+    public let circulatingSupply, totalSupply, maxSupply, ath: Double?
+    public let athChangePercentage: Double?
+    public let athDate: String?
+    public let atl, atlChangePercentage: Double?
+    public let atlDate: String?
+    public let lastUpdated: String?
+    public let sparklineIn7D: SparklineIn7D?
+    public let priceChangePercentage24HInCurrency: Double?
+    public let currentHoldings: Double? // not part of the json data but we will store how many of the coin the user has
     
     public init(id: String, symbol: String, name: String, image: String, currentPrice: Double, marketCap: Double?, marketCapRank: Double?, fullyDilutedValuation: Double?, totalVolume: Double?, high24H: Double?, low24H: Double?, priceChange24H: Double?, priceChangePercentage24H: Double?, marketCapChange24H: Double?, marketCapChangePercentage24H: Double?, circulatingSupply: Double?, totalSupply: Double?, maxSupply: Double?, ath: Double?, athChangePercentage: Double?, athDate: String?, atl: Double?, atlChangePercentage: Double?, atlDate: String?, lastUpdated: String?, sparklineIn7D: SparklineIn7D?, priceChangePercentage24HInCurrency: Double?, currentHoldings: Double?) {
         self.id = id
@@ -135,11 +135,11 @@ public struct CoinModel: Identifiable, Codable {
         return CoinModel(id: id, symbol: symbol, name: name, image: image, currentPrice: currentPrice, marketCap: marketCap, marketCapRank: marketCapRank, fullyDilutedValuation: fullyDilutedValuation, totalVolume: totalVolume, high24H: high24H, low24H: low24H, priceChange24H: priceChange24H, priceChangePercentage24H: priceChangePercentage24H, marketCapChange24H: marketCapChange24H, marketCapChangePercentage24H: marketCapChangePercentage24H, circulatingSupply: circulatingSupply, totalSupply: totalSupply, maxSupply: maxSupply, ath: ath, athChangePercentage: athChangePercentage, athDate: athDate, atl: atl, atlChangePercentage: atlChangePercentage, atlDate: atlDate, lastUpdated: lastUpdated, sparklineIn7D: sparklineIn7D, priceChangePercentage24HInCurrency: priceChangePercentage24HInCurrency, currentHoldings: amount)
     }
     
-    var currentHoldingsValue: Double {
+    public var currentHoldingsValue: Double {
         return (currentHoldings ?? 0) * currentPrice
     }
     
-    var rank: Int {
+    public var rank: Int {
         return Int(marketCapRank ?? 0)
     }
 }

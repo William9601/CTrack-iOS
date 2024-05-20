@@ -10,19 +10,25 @@ import Common
 import ThemeManager
 
 public struct CTDataChunk: View {
-    let alignmnet: CTDataChunkAlignment
+    let alignment: CTDataChunkAlignment
     let title: String
     let subtext: String?
     let icon: Image?
+    let titleColor: Color?
+    let subtextColor: Color?
     
-    public init(alignmnet: CTDataChunkAlignment,
+    public init(alignment: CTDataChunkAlignment,
                 title: String,
-                subtext: String?,
-                icon: Image?) {
-        self.alignmnet = alignmnet
+                subtext: String? = nil,
+                icon: Image? = nil,
+                titleColor: Color? = nil,
+                subtextColor: Color? = nil) {
+        self.alignment = alignment
         self.title = title
         self.subtext = subtext
         self.icon = icon
+        self.titleColor = titleColor
+        self.subtextColor = subtextColor
     }
     
     public var body: some View {
@@ -40,10 +46,14 @@ public struct CTDataChunk: View {
     }
     
     private var label: some View {
-        VStack(alignment: .leading, spacing: .zero) {
+        VStack(alignment: alignment.labelAlignment, spacing: .zero) {
             Text(title)
+                .font(.headline)
+                .foregroundColor(titleColor ?? .theme.ctAccent)
             if let subtext {
                 Text(subtext)
+                    .font(.subheadline)
+                    .foregroundColor(subtextColor ?? .theme.ctSecondaryText)
             }
         }
         
@@ -65,9 +75,9 @@ public struct CTDataChunk: View {
 
 struct CTDataChunk_Previews: PreviewProvider {
     static var previews: some View {
-        CTDataChunk(alignmnet: .leading,
-                           title: "Label",
-                           subtext: "Subtext",
-                           icon: Image(systemName: "checkmark.circle"))
+        CTDataChunk(alignment: .leading,
+                    title: "Label",
+                    subtext: "Subtext",
+                    icon: Image(systemName: "checkmark.circle"))
     }
 }
