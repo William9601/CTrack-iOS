@@ -3,7 +3,7 @@
 
 import SwiftUI
 import Components
-import Views
+import Core
 
 public struct RootView: View {
     public init() {}

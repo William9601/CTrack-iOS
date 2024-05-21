@@ -10,6 +10,7 @@ import Components
 import Extensions
 
 public struct LivePrices: View {
+    // Because we use the DashboardModel in many views, instad of passing it from view to view with an ObservableObject, we will instead put it in the environment as an EnvironmentObject.
     @State private var showPortfolio = false
     
     public init() {}
@@ -23,7 +24,10 @@ public struct LivePrices: View {
             //content layer
             VStack {
                 header
-                CoinRowView(coin: DeveloperPreview.instance.coin, showHoldingsColumn: false)
+                List {
+                    CoinRowView(coin: DeveloperPreview.instance.coin, showHoldingsColumn: false)
+                }.listStyle(.plain)
+                
                 Spacer(minLength: 0)
             }
         }
