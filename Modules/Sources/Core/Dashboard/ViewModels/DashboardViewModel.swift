@@ -7,6 +7,6 @@
 
 import Foundation
 
-class DashboardViewModel: ObservableObject {
-    
+public class DashboardViewModel: ObservableObject {
+    public init() {}
 }

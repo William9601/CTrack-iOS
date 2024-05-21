@@ -5,7 +5,6 @@
 //  Created by William von Arend on 19/05/2024.
 //
 
-import Foundation
 import SwiftUI
 import Models
 
@@ -21,6 +20,8 @@ public class DeveloperPreview {
     
     public static let instance = DeveloperPreview()
     private init() { }
+    
+    let dashboardVM = DashboardViewModel()
     
     public let coin = CoinModel(
        id: "bitcoin",
