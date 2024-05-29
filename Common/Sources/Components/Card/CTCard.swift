@@ -22,7 +22,7 @@ public struct CTCard<Content: View>: View {
                 .padding(.ctSpace3)
         }.roundedBackground(backgroundColor: .theme.ctBackgroundColor,
                             borderColor: .theme.ctAccent,
-                            borderRadius: 4)
+                            borderRadius: .ctSpace2)
     }
 }
 

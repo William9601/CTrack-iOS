@@ -24,6 +24,6 @@ public struct Dashboard: View {
 struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
         Dashboard()
-            .environmentObject(DashboardViewModel())
+            .environmentObject(dev.dashboardVM)
     }
 }

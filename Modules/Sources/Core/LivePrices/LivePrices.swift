@@ -7,10 +7,9 @@
 
 import SwiftUI
 import Components
-import Extensions
 
 public struct LivePrices: View {
-    // Because we use the DashboardModel in many views, instad of passing it from view to view with an ObservableObject, we will instead put it in the environment as an EnvironmentObject.
+    @EnvironmentObject private var vm: DashboardViewModel // Because we use the DashboardModel in many views, instad of passing it from view to view with an ObservableObject, we will instead put it in the environment as an EnvironmentObject.
     @State private var showPortfolio = false
     
     public init() {}
@@ -24,10 +23,14 @@ public struct LivePrices: View {
             //content layer
             VStack {
                 header
-                List {
-                    CoinRowView(coin: DeveloperPreview.instance.coin, showHoldingsColumn: false)
-                }.listStyle(.plain)
-                
+                if !showPortfolio {
+                    allCoinsList
+                        .transition(.move(edge: .leading))
+                }
+                if showPortfolio {
+                    portfolioCoinsList
+                        .transition(.move(edge: .trailing))
+                }
                 Spacer(minLength: 0)
             }
         }
@@ -61,4 +64,30 @@ extension LivePrices {
                 }
         }.padding(.horizontal, .ctSpace3)
     }
-} 
+    
+    private var allCoinsList: some View {
+        List {
+            ForEach(vm.allCoins) { coin in
+                CoinRowView(coin: coin, showHoldingsColumn: false)
+                    .listRowInsets(.init(top: .ctSpace4,
+                                         leading: .ctSpace0,
+                                         bottom: .ctSpace4,
+                                         trailing: .ctSpace4))
+            }
+        }
+        .listStyle(.plain)
+    }
+    
+    private var portfolioCoinsList: some View {
+        List {
+            ForEach(vm.portfolioCoins) { coin in
+                CoinRowView(coin: coin, showHoldingsColumn: true)
+                    .listRowInsets(.init(top: .ctSpace4,
+                                         leading: .ctSpace0,
+                                         bottom: .ctSpace4,
+                                         trailing: .ctSpace4))
+            }
+        }
+        .listStyle(.plain)
+    }
+}

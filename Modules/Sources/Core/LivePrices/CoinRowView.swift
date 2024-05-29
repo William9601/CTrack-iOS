@@ -7,7 +7,6 @@
 
 import SwiftUI
 import Models
-import Extensions
 import Components
 
 struct CoinRowView: View {
