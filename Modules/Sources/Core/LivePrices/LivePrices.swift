@@ -23,6 +23,9 @@ public struct LivePrices: View {
             //content layer
             VStack {
                 header
+                
+                columnTitles
+                
                 if !showPortfolio {
                     allCoinsList
                         .transition(.move(edge: .leading))
@@ -89,5 +92,20 @@ extension LivePrices {
             }
         }
         .listStyle(.plain)
+    }
+    
+    private var columnTitles: some View {
+        HStack {
+            Text("Coin")
+            Spacer()
+            if showPortfolio {
+                Text("Holdings")
+            }
+            Text("Price")
+                .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+        }
+        .font(.caption)
+        .foregroundColor(.theme.ctSecondaryText)
+        .padding(.horizontal)
     }
 }
