@@ -3,7 +3,7 @@
 
 import SwiftUI
 import Components
-import Core
+import Scenes
 
 public struct RootView: View {
     @StateObject private var vm = DashboardViewModel()
@@ -12,20 +12,8 @@ public struct RootView: View {
 
     public var body: some View {
         NavigationView {
-             LivePrices()
+             HomeView()
                 .navigationBarHidden(true)
         }.environmentObject(vm)
     }
 }
-
-//public struct RootView: App {
-//    public init() {}
-//
-//    public var body: some Scene {
-//        WindowGroup {
-//            VStack {
-//                Dashboard()
-//            }.padding(.horizontal, 25)
-//        }
-//    }
-//}

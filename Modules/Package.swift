@@ -17,8 +17,8 @@ let package = Package(
         .package(name: "Common", path: "../Common")
     ],
     targets: [
-        .target(name: "Root", dependencies: [ "Core" ]),
-        .target(name: "Core", dependencies: [.product(name: "Components", package: "Common"), "Models"]),
+        .target(name: "Root", dependencies: [ "Scenes" ]),
+        .target(name: "Scenes", dependencies: [.product(name: "Components", package: "Common"), "Models"]),
         .target(name: "Models"),
 //        .target(name: "Extensions", dependencies: ["Models"])
     ]

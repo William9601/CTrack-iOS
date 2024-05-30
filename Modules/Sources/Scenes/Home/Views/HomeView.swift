@@ -1,5 +1,5 @@
 //
-//  LivePrices.swift
+//  HomeView.swift
 //
 //
 //  Created by William von Arend on 18/05/2024.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Components
 
-public struct LivePrices: View {
+public struct HomeView: View {
     @EnvironmentObject private var vm: DashboardViewModel // Because we use the DashboardModel in many views, instad of passing it from view to view with an ObservableObject, we will instead put it in the environment as an EnvironmentObject.
     @State private var showPortfolio = false
     
@@ -40,7 +40,7 @@ public struct LivePrices: View {
     }
 }
 
-extension LivePrices {
+extension HomeView {
     private var header: some View {
         HStack {
             withAnimation(.none) {
