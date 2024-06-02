@@ -25,12 +25,6 @@ struct CoinRowView: View {
     }
 }
 
-struct CoinRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        CoinRowView(coin: dev.coin, showHoldingsColumn: true)
-    }
-}
-
 extension CoinRowView {
     private var leftColumn: some View {
         HStack(spacing: .zero) {
@@ -60,5 +54,12 @@ extension CoinRowView {
                         ? .theme.ctGreen
                         : .theme.ctRed)
         }.frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing) // Use Geometry reader if you allow the app in landscape mode
+    }
+}
+
+
+struct CoinRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        CoinRowView(coin: dev.coin, showHoldingsColumn: true)
     }
 }

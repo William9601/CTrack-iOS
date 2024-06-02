@@ -6,7 +6,7 @@ import Components
 import Scenes
 
 public struct RootView: View {
-    @StateObject private var vm = DashboardViewModel()
+    @StateObject private var vm = HomeViewModel()
     
     public init() {}
 

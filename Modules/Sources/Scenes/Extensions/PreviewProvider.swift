@@ -8,20 +8,22 @@
 import SwiftUI
 import Models
 
-extension PreviewProvider {
+extension PreviewProvider { // We extend from preview provider so that in our previews we can just do this an use `dev.coin` to use the coin data. `CoinRowView(coin: dev.coin, showHoldingsColumn: true)`
+
     
     public static var dev: DeveloperPreview {
-        return DeveloperPreview.instance
+        return DeveloperPreview.instance // we can call PreviewProvider.dev() to use the data from the Developer Preview
     }
     
 }
 
 public class DeveloperPreview {
     
-    public static let instance = DeveloperPreview()
+    public static let instance = DeveloperPreview() // We create a singleton, so that it is the only instance in the entire app. We add a private init so we can't initialise a new instance anythwere else. This is a way to efficiently have one instance of this data in the entire app.
+    
     private init() { }
     
-    let dashboardVM = DashboardViewModel()
+    let homeVM = HomeViewModel()
     
     public let coin = CoinModel(
        id: "bitcoin",

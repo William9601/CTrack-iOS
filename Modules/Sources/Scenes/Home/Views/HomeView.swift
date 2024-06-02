@@ -9,7 +9,7 @@ import SwiftUI
 import Components
 
 public struct HomeView: View {
-    @EnvironmentObject private var vm: DashboardViewModel // Because we use the DashboardModel in many views, instad of passing it from view to view with an ObservableObject, we will instead put it in the environment as an EnvironmentObject.
+    @EnvironmentObject private var vm: HomeViewModel // Because we use the HomeViewModel in many views, instad of passing it from view to view with an ObservableObject, we will instead put it in the environment as an EnvironmentObject.
     @State private var showPortfolio = false
     
     public init() {}
