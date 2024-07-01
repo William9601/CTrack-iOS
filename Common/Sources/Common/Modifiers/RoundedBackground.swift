@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ThemeManager
 
 private struct RoundedBackground: ViewModifier {
     private let backgroundColor: Color
@@ -43,7 +42,7 @@ extension View {
         modifier(RoundedBackground(backgroundColor: backgroundColor,
                                    borderColor: borderColor,
                                    borderRadius: borderRadius,
-                                   stroke: StrokeStyle(lineWidth: .ctBorderWidth)))
+                                   stroke: StrokeStyle(lineWidth: 1)))
     }
 }
 

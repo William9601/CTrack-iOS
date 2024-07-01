@@ -9,8 +9,17 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "Components",
-            targets: ["Components"]),
+              name: "Components",
+              targets: ["Components"]
+          ),
+          .library(
+              name: "Models",
+              targets: ["Models"]
+          ),
+          .library(
+              name: "Services",
+              targets: ["Services"]
+          ),
         
 //        If you want it exposed outside of Common package:
 //            .library(
@@ -22,6 +31,8 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(name: "ThemeManager"),
         .target(name: "Components", dependencies: ["ThemeManager", "Common"]),
-        .target(name: "Common", dependencies: ["ThemeManager"])
+        .target(name: "Common"),
+        .target(name: "Models"),
+        .target(name: "Services", dependencies: ["Models"]),
     ]
 )

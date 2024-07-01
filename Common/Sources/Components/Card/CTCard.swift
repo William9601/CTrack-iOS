@@ -7,7 +7,6 @@
 
 import SwiftUI
 import ThemeManager
-import Common
 
 public struct CTCard<Content: View>: View {
     var content: Content
