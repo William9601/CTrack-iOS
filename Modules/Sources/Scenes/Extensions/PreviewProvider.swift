@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  PreviewProvider.swift
+//
 //
 //  Created by William von Arend on 19/05/2024.
 //

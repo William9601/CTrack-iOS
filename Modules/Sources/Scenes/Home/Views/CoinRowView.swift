@@ -34,7 +34,10 @@ extension CoinRowView {
                 .frame(minWidth: 30)
             CTDataChunk(alignment: .leading,
                         title: coin.symbol.uppercased(),
-                        icon: Image(systemName: "checkmark.circle"))
+                        leadingIcon: {
+                CoinImageView(coin: coin)
+                    .frame(width: 30, height: 30)
+            })
                 .padding(.leading, .ctSpace3)
         }
     }

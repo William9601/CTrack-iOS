@@ -27,7 +27,7 @@ class NetworkingManager {
             .subscribe(on:DispatchQueue.global(qos: .default))
             .tryMap({ try handleURLResponse(output: $0, url: url) })
             .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher() // Lets us simplify the type to `AnyPublisher<Data, Error>`
+            .eraseToAnyPublisher() // Lets us simplify the return type to `AnyPublisher<Data, Error>`
     }
     
     static func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {

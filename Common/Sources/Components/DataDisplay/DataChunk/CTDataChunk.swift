@@ -9,31 +9,31 @@ import SwiftUI
 import Common
 import ThemeManager
 
-public struct CTDataChunk: View {
+public struct CTDataChunk<Icon: View>: View {
     let alignment: CTDataChunkAlignment
     let title: String
     let subtext: String?
-    let icon: Image?
+    let leadingIcon: () -> Icon
     let titleColor: Color?
     let subtextColor: Color?
     
     public init(alignment: CTDataChunkAlignment,
                 title: String,
                 subtext: String? = nil,
-                icon: Image? = nil,
+                @ViewBuilder leadingIcon: @escaping () -> Icon = { EmptyView() },
                 titleColor: Color? = nil,
                 subtextColor: Color? = nil) {
         self.alignment = alignment
         self.title = title
         self.subtext = subtext
-        self.icon = icon
+        self.leadingIcon = leadingIcon
         self.titleColor = titleColor
         self.subtextColor = subtextColor
     }
     
     public var body: some View {
         HStack {
-            leadingIcon
+            leadingIcon()
                 .alignmentGuide(
                     VerticalAlignment.center,
                     computeValue: TextIconAlignment.iconAlignmentGuide(view:)
@@ -58,19 +58,6 @@ public struct CTDataChunk: View {
         }
         
     }
-    
-    @ViewBuilder private var leadingIcon: some View {
-        if let icon {
-            icon
-                .resizable()
-                .renderingMode(.template)
-                .scaledToFill()
-                .fixedSize()
-                .foregroundColor(.black)
-                .frame(height: .ctIconS)
-                .padding(.trailing, .ctSpace1)
-        }
-    }
 }
 
 struct CTDataChunk_Previews: PreviewProvider {
@@ -78,6 +65,6 @@ struct CTDataChunk_Previews: PreviewProvider {
         CTDataChunk(alignment: .leading,
                     title: "Label",
                     subtext: "Subtext",
-                    icon: Image(systemName: "checkmark.circle"))
+                    leadingIcon: { Image(systemName: "checkmark.circle") })
     }
 }

@@ -13,7 +13,7 @@ public class CoinDataService {
     
     @Published public var allCoins: [CoinModel] = [] // Publishers can have subscribers so everytime this gets updated with data, the subscribers will get that data
     
-    var coinSubscription: AnyCancellable?
+    private var coinSubscription: AnyCancellable?
     
     public init() {
         getCoins() // 1- Initialise and call getCoins()
