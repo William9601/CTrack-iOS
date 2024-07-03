@@ -15,26 +15,11 @@ extension CGFloat {
     public static let ctSpace4: CGFloat = CTDimensions().space3
     public static let ctBorderRadius: CGFloat = CTDimensions().borderRadius
     public static let ctBorderWidth: CGFloat = CTDimensions().borderWidth
-    public static let ctIconXS: CGFloat = CTDimensions().iconXS // Should make an icon container component
+    public static let ctIconXS: CGFloat = CTDimensions().iconXS // Should make an icon container component that sizes icons
     public static let ctIconS: CGFloat = CTDimensions().iconS
     public static let ctIconM: CGFloat = CTDimensions().iconM
     public static let ctIconL: CGFloat = CTDimensions().iconL
     public static let ctIconXL: CGFloat = CTDimensions().iconXL
-}
-
-public protocol CTDimensionsProtocol {
-    var space0: CGFloat { get }
-    var space1: CGFloat { get }
-    var space2: CGFloat { get }
-    var space3: CGFloat { get }
-    var space4: CGFloat { get }
-    var borderRadius: CGFloat { get }
-    var borderWidth: CGFloat { get }
-    var iconXS: CGFloat { get }
-    var iconS: CGFloat { get }
-    var iconM: CGFloat { get }
-    var iconL: CGFloat { get }
-    var iconXL: CGFloat { get }
 }
 
 struct CTDimensions: CTDimensionsProtocol {

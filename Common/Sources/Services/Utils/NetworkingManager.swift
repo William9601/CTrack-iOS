@@ -24,7 +24,7 @@ class NetworkingManager {
     
     static func download(url: URL) -> AnyPublisher<Data, Error> { // By making it static we don't need to initialise the class. We can just call `NetworkingManager.download`
         return URLSession.shared.dataTaskPublisher(for: url) // 3- Get the data from the URL
-            .subscribe(on:DispatchQueue.global(qos: .default))
+            .subscribe(on:DispatchQueue.global(qos: .default)) // Download data in a different thread, not on the main thread
             .tryMap({ try handleURLResponse(output: $0, url: url) })
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher() // Lets us simplify the return type to `AnyPublisher<Data, Error>`
