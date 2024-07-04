@@ -8,29 +8,25 @@
 import SwiftUI
 
 extension CGFloat {
-    public static let ctSpace0: CGFloat = CTDimensions().space0
-    public static let ctSpace1: CGFloat = CTDimensions().space1
-    public static let ctSpace2: CGFloat = CTDimensions().space2
-    public static let ctSpace3: CGFloat = CTDimensions().space3
-    public static let ctSpace4: CGFloat = CTDimensions().space3
-    public static let ctCornerRadiusDefault: CGFloat = CTDimensions().cornerRadiusDefault
-    public static let ctCornerRadiusRound: CGFloat = CTDimensions().cornerRadiusRound
-    public static let ctBorderWidth: CGFloat = CTDimensions().borderWidth
-    public static let ctIconXS: CGFloat = CTDimensions().iconXS // Should make an icon container component that sizes icons
-    public static let ctIconS: CGFloat = CTDimensions().iconS
-    public static let ctIconM: CGFloat = CTDimensions().iconM
-    public static let ctIconL: CGFloat = CTDimensions().iconL
-    public static let ctIconXL: CGFloat = CTDimensions().iconXL
+    public static var ctDimensions: CTDimensionsProtocol { CTDimensions() }
+}
+
+extension Double {
+    public static var ctDimensions: CTDimensionsProtocol { CTDimensions() }
 }
 
 struct CTDimensions: CTDimensionsProtocol {
     var space0: CGFloat { 0 }
+    var space05: CGFloat { 1 }
     var space1: CGFloat { 2 }
     var space2: CGFloat { 4 }
     var space3: CGFloat { 6 }
     var space4: CGFloat { 8 }
+    var space5: CGFloat { 12 }
+    var space6: CGFloat { 16 }
+    var space7: CGFloat { 20 }
     var cornerRadiusDefault: CGFloat { 4 }
-    var cornerRadiusRound: CGFloat { 25 }
+    var cornerRadiusRound: CGFloat { 24 }
     var borderWidth: CGFloat { 1 }
     var iconXS: CGFloat { 4 }
     var iconS: CGFloat { 6 }

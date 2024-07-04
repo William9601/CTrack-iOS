@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  CTCard.swift
 //  
 //
 //  Created by William von Arend on 30/04/2024.
@@ -10,18 +10,22 @@ import ThemeManager
 
 public struct CTCard<Content: View>: View {
     var content: Content
+    private let size: CTCardSize
     
-    public init(@ViewBuilder content: () -> Content) {
-        self.content = content()
-    }
+    public init(
+        size: CTCardSize = .regular,
+        @ViewBuilder content: () -> Content) {
+            self.size = size
+            self.content = content()
+        }
     
     public var body: some View {
         VStack {
             content
-                .padding(.ctSpace3)
+                .padding(size.padding)
         }.roundedBackground(backgroundColor: .theme.ctBackgroundColor,
                             borderColor: .theme.ctAccent,
-                            cornerRadius: .ctCornerRadiusDefault)
+                            cornerRadius: .ctDimensions.cornerRadiusDefault)
     }
 }
 

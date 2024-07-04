@@ -9,10 +9,14 @@ import SwiftUI
 
 public protocol CTDimensionsProtocol {
     var space0: CGFloat { get }
+    var space05: CGFloat { get }
     var space1: CGFloat { get }
     var space2: CGFloat { get }
     var space3: CGFloat { get }
     var space4: CGFloat { get }
+    var space5: CGFloat { get }
+    var space6: CGFloat { get }
+    var space7: CGFloat { get }
     var cornerRadiusDefault: CGFloat { get }
     var cornerRadiusRound: CGFloat { get }
     var borderWidth: CGFloat { get }

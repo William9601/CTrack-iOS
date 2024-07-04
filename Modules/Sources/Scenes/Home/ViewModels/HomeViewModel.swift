@@ -31,4 +31,3 @@ public class HomeViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 }
-

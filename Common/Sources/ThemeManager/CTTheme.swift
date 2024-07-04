@@ -1,13 +1,13 @@
 //
-//  File.swift
-//  
+//  Theme.swift
+//
 //
 //  Created by William von Arend on 03/05/2024.
 //
 
 import SwiftUI
 
-public struct Theme {
+public struct CTTheme {
     public var currentTheme = MidnightTheme()
 }
 
