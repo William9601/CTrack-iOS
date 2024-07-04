@@ -13,7 +13,8 @@ public protocol CTDimensionsProtocol {
     var space2: CGFloat { get }
     var space3: CGFloat { get }
     var space4: CGFloat { get }
-    var borderRadius: CGFloat { get }
+    var cornerRadiusDefault: CGFloat { get }
+    var cornerRadiusRound: CGFloat { get }
     var borderWidth: CGFloat { get }
     var iconXS: CGFloat { get }
     var iconS: CGFloat { get }

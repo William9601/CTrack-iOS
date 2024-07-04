@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  CTDimensions.swift
 //  
 //
 //  Created by William von Arend on 15/05/2024.
@@ -13,7 +13,8 @@ extension CGFloat {
     public static let ctSpace2: CGFloat = CTDimensions().space2
     public static let ctSpace3: CGFloat = CTDimensions().space3
     public static let ctSpace4: CGFloat = CTDimensions().space3
-    public static let ctBorderRadius: CGFloat = CTDimensions().borderRadius
+    public static let ctCornerRadiusDefault: CGFloat = CTDimensions().cornerRadiusDefault
+    public static let ctCornerRadiusRound: CGFloat = CTDimensions().cornerRadiusRound
     public static let ctBorderWidth: CGFloat = CTDimensions().borderWidth
     public static let ctIconXS: CGFloat = CTDimensions().iconXS // Should make an icon container component that sizes icons
     public static let ctIconS: CGFloat = CTDimensions().iconS
@@ -28,7 +29,8 @@ struct CTDimensions: CTDimensionsProtocol {
     var space2: CGFloat { 4 }
     var space3: CGFloat { 6 }
     var space4: CGFloat { 8 }
-    var borderRadius: CGFloat { 4 }
+    var cornerRadiusDefault: CGFloat { 4 }
+    var cornerRadiusRound: CGFloat { 25 }
     var borderWidth: CGFloat { 1 }
     var iconXS: CGFloat { 4 }
     var iconS: CGFloat { 6 }

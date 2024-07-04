@@ -24,6 +24,9 @@ public struct HomeView: View {
             VStack {
                 header
                 
+                CTSearchBar(searchText: $vm.searchText)
+                    .padding(.ctSpace3)
+
                 columnTitles
                 
                 if !showPortfolio {
@@ -106,6 +109,6 @@ extension HomeView {
         }
         .font(.caption)
         .foregroundColor(.theme.ctSecondaryText)
-        .padding(.horizontal)
+        .padding(.horizontal, .ctSpace3)
     }
 }

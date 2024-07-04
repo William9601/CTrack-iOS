@@ -10,25 +10,25 @@ import SwiftUI
 private struct RoundedBackground: ViewModifier {
     private let backgroundColor: Color
     private let borderColor: Color
-    private let borderRadius: CGFloat
+    private let cornerRadius: CGFloat
     private let stroke: StrokeStyle
     
     init(backgroundColor: Color,
          borderColor: Color,
-         borderRadius: CGFloat,
+         cornerRadius: CGFloat,
          stroke: StrokeStyle) {
         self.backgroundColor = backgroundColor
         self.borderColor = borderColor
-        self.borderRadius = borderRadius
+        self.cornerRadius = cornerRadius
         self.stroke = stroke
     }
     
     func body(content: Content) -> some View {
         content.background(
             ZStack {
-                RoundedRectangle(cornerRadius: borderRadius)
+                RoundedRectangle(cornerRadius: cornerRadius)
                     .fill(backgroundColor)
-                RoundedRectangle(cornerRadius: borderRadius)
+                RoundedRectangle(cornerRadius: cornerRadius)
                     .stroke(borderColor, style: stroke)
             }
         )
@@ -38,10 +38,10 @@ private struct RoundedBackground: ViewModifier {
 extension View {
     public func roundedBackground(backgroundColor: Color = .clear,
                                   borderColor: Color,
-                                  borderRadius: CGFloat) -> some View {
+                                  cornerRadius: CGFloat) -> some View {
         modifier(RoundedBackground(backgroundColor: backgroundColor,
                                    borderColor: borderColor,
-                                   borderRadius: borderRadius,
+                                   cornerRadius: cornerRadius,
                                    stroke: StrokeStyle(lineWidth: 1)))
     }
 }
@@ -54,6 +54,6 @@ struct RoundedBackground_Previews: PreviewProvider {
         .padding()
         .roundedBackground(backgroundColor: Color.cyan,
                            borderColor: Color.blue,
-                           borderRadius: 4)
+                           cornerRadius: 4)
     }
 }

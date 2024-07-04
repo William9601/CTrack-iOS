@@ -21,7 +21,7 @@ public struct CTCard<Content: View>: View {
                 .padding(.ctSpace3)
         }.roundedBackground(backgroundColor: .theme.ctBackgroundColor,
                             borderColor: .theme.ctAccent,
-                            borderRadius: .ctSpace2)
+                            cornerRadius: .ctCornerRadiusDefault)
     }
 }
 

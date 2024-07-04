@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  CTColor.swift
+//
 //
 //  Created by William von Arend on 15/05/2024.
 //
