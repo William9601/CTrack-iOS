@@ -56,7 +56,7 @@ extension CoinRowView {
                         subtextColor: (coin.priceChangePercentage24H ?? 0) >= 0
                         ? .theme.ctGreen
                         : .theme.ctRed)
-        }.frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing) // Use Geometry reader if you allow the app in landscape mode
+        }.frame(width: UIScreen.main.bounds.width / 3.5, alignment: .topTrailing) // Use Geometry reader if you allow the app in landscape mode
     }
 }
 
