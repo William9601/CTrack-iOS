@@ -25,7 +25,7 @@ public struct HomeView: View {
                 header
                 
                 CTSearchBar(searchText: $vm.searchText)
-                    .padding(.ctSpace3)
+                    .padding(.ctDimensions.space3)
 
                 columnTitles
                 
@@ -68,17 +68,17 @@ extension HomeView {
                         showPortfolio.toggle()
                     }
                 }
-        }.padding(.horizontal, .ctSpace3)
+        }.padding(.horizontal, .ctDimensions.space3)
     }
     
     private var allCoinsList: some View {
         List {
             ForEach(vm.allCoins) { coin in
                 CoinRowView(coin: coin, showHoldingsColumn: false)
-                    .listRowInsets(.init(top: .ctSpace4,
-                                         leading: .ctSpace0,
-                                         bottom: .ctSpace4,
-                                         trailing: .ctSpace4))
+                    .listRowInsets(.init(top: .ctDimensions.space4,
+                                         leading: .ctDimensions.space0,
+                                         bottom: .ctDimensions.space4,
+                                         trailing: .ctDimensions.space4))
             }
         }
         .listStyle(.plain)
@@ -88,10 +88,10 @@ extension HomeView {
         List {
             ForEach(vm.portfolioCoins) { coin in
                 CoinRowView(coin: coin, showHoldingsColumn: true)
-                    .listRowInsets(.init(top: .ctSpace4,
-                                         leading: .ctSpace0,
-                                         bottom: .ctSpace4,
-                                         trailing: .ctSpace4))
+                    .listRowInsets(.init(top: .ctDimensions.space4,
+                                         leading: .ctDimensions.space0,
+                                         bottom: .ctDimensions.space4,
+                                         trailing: .ctDimensions.space4))
             }
         }
         .listStyle(.plain)
@@ -109,6 +109,6 @@ extension HomeView {
         }
         .font(.caption)
         .foregroundColor(.theme.ctSecondaryText)
-        .padding(.horizontal, .ctSpace3)
+        .padding(.horizontal, .ctDimensions.space3)
     }
 }

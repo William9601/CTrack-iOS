@@ -43,7 +43,7 @@ public struct CTSearchBar: View {
         .font(.headline)
         .padding()
         .background(
-            RoundedRectangle(cornerRadius: .ctCornerRadiusRound)
+            RoundedRectangle(cornerRadius: .ctDimensions.cornerRadiusRound)
                 .fill(Color.theme.ctBackgroundColor)
                 .shadow(color: .theme.ctAccent.opacity(0.15), radius: 10, x: 0, y: 0)
         )

@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-extension Color {
-    public static let theme = Theme().currentTheme.color
-}
-
 public protocol CTColorProtocol {
     var ctAccent: Color { get }
     var ctBackgroundColor: Color { get }

@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+
+extension Color {
+    public static let theme = CTTheme().currentTheme.color
+}
+
 public struct MidnightThemeColor: CTColorProtocol {
     public let ctAccent = Color("AccentColor")
     public let ctBackgroundColor = Color("BackgroundColor")

@@ -26,7 +26,7 @@ public class CoinImageService {
         getCoinImage()
     }
     
-    private func getCoinImage() {
+    private func getCoinImage() { // If image is saved, retrieve it from file manager, else download it
         if let savedImage = fileManager.getImage(imageName: imageName, folderName: folderName) {
             image = savedImage
         } else {
@@ -45,7 +45,7 @@ public class CoinImageService {
                 guard let self = self, let downloadedImage = returnedImage else { return }
                 self.image = downloadedImage
                 self.imageSubscription?.cancel()
-                self.fileManager.saveImage(image: downloadedImage, imageName: self.imageName, folderName: self.folderName)
+                self.fileManager.saveImage(image: downloadedImage, imageName: self.imageName, folderName: self.folderName) // Save in file manager so we don't have to download it again
             })
     }
 }

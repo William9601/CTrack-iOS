@@ -38,7 +38,7 @@ extension CoinRowView {
                 CoinImageView(coin: coin)
                     .frame(width: 30, height: 30)
             })
-                .padding(.leading, .ctSpace3)
+            .padding(.leading, .ctDimensions.space3)
         }
     }
     
