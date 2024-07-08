@@ -19,21 +19,17 @@ let package = Package(
           .library(
               name: "Services",
               targets: ["Services"]
-          ),
-        
-//        If you want it exposed outside of Common package:
-//            .library(
-//                name: "Assets",
-//                targets: ["Assets"]),
+          )
     ],
+
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(name: "ThemeManager"),
         .target(name: "Common"),
         .target(name: "Models"),
-        .target(name: "Extensions"),
+        .target(name: "Extensions", dependencies: ["Models"]),
         .target(name: "Services", dependencies: ["Models"]),
-        .target(name: "Components", dependencies: ["ThemeManager", "Common", "Extensions"])
+        .target(name: "Components", dependencies: ["ThemeManager", "Common", "Extensions", "Models", "Services"])
     ]
 )

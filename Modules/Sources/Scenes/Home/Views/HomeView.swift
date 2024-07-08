@@ -24,6 +24,8 @@ public struct HomeView: View {
             VStack {
                 header
                 
+                HomeStatsView(showPortfolio: $showPortfolio)
+                
                 CTSearchBar(searchText: $vm.searchText)
                     .padding(.ctDimensions.space3)
 
