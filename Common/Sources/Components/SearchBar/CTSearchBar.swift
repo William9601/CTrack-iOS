@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Extensions
 
 public struct CTSearchBar: View {
     

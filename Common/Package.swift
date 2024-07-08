@@ -28,8 +28,7 @@ let package = Package(
         .target(name: "ThemeManager"),
         .target(name: "Common"),
         .target(name: "Models"),
-        .target(name: "Extensions", dependencies: ["Models"]),
         .target(name: "Services", dependencies: ["Models"]),
-        .target(name: "Components", dependencies: ["ThemeManager", "Common", "Extensions", "Models", "Services"])
+        .target(name: "Components", dependencies: ["ThemeManager", "Common", "Models", "Services"])
     ]
 )

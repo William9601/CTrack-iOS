@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Models
+//import Models
 
 extension PreviewProvider { // We extend from preview provider so that in our previews we can just do this an use `dev.coin` to use the coin data. `CoinRowView(coin: dev.coin, showHoldingsColumn: true)`
 
