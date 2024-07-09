@@ -8,11 +8,11 @@
 import SwiftUI
 
 extension CGFloat {
-    public static var ctDimensions: CTDimensionsProtocol { CTDimensions() }
+    public static var ctDimensions = ThemeManager.shared.getTheme().selectedTheme.dimensions
 }
 
 extension Double {
-    public static var ctDimensions: CTDimensionsProtocol { CTDimensions() }
+    public static var ctDimensions = ThemeManager.shared.getTheme().selectedTheme.dimensions
 }
 
 struct CTDimensions: CTDimensionsProtocol {

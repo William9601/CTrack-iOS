@@ -7,8 +7,32 @@
 
 import SwiftUI
 
-public struct CTTheme {
-    public var currentTheme = MidnightTheme()
+public class ThemeManager {
+    public static let shared = ThemeManager() // Singleton
+    
+    private init() {}
+    
+    private var theme: CTThemes = .summer
+    
+    public func getTheme() -> CTThemes {
+        return theme
+    }
+    
+    public func setTheme(_ newTheme: CTThemes) {
+        theme = newTheme
+    }
+}
+
+public enum CTThemes {
+    case midnight
+    case summer
+    
+    var selectedTheme: CTThemeProtocol {
+        switch self {
+        case .midnight: MidnightTheme()
+        case .summer: SummerTheme()
+        }
+    }
 }
 
 public struct MidnightTheme: CTThemeProtocol {

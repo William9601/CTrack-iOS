@@ -4,11 +4,13 @@
 import SwiftUI
 import Components
 import Scenes
+import ThemeManager
 
 public struct RootView: View {
     @StateObject private var vm = HomeViewModel()
     
     init() {
+        ThemeManager.shared.setTheme(.summer)
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.theme.ctAccent)] // Set color of natigation bar titles
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.theme.ctAccent)]
     }
