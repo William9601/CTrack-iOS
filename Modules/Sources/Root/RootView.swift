@@ -8,7 +8,10 @@ import Scenes
 public struct RootView: View {
     @StateObject private var vm = HomeViewModel()
     
-    public init() {}
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.theme.ctAccent)] // Set color of natigation bar titles
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.theme.ctAccent)]
+    }
 
     public var body: some View {
         NavigationView {

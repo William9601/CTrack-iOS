@@ -10,7 +10,8 @@ import Components
 
 public struct HomeView: View {
     @EnvironmentObject private var vm: HomeViewModel // Because we use the HomeViewModel in many views, instad of passing it from view to view with an ObservableObject, we will instead put it in the environment as an EnvironmentObject.
-    @State private var showPortfolio = false
+    @State private var showPortfolio = false // animate right
+    @State private var showPortfolioView: Bool = false // new sheet
     
     public init() {}
     
@@ -19,6 +20,10 @@ public struct HomeView: View {
             // background layer
             Color.theme.ctBackgroundColor
                 .ignoresSafeArea()
+                .sheet(isPresented: $showPortfolioView) {
+                    PortfolioView()
+                        .environmentObject(vm)
+                }
             
             //content layer
             VStack {
@@ -50,6 +55,11 @@ extension HomeView {
         HStack {
             withAnimation(.none) {
                 CircleButton(iconName: showPortfolio ? "plus" : "info")
+                    .onTapGesture {
+                        if showPortfolio {
+                            showPortfolioView.toggle()
+                        }
+                    }
                     .background(
                         CircleButtonAnimation(animate: $showPortfolio)
                     )
