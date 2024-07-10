@@ -111,7 +111,7 @@ extension PortfolioView {
                 (selectedCoin != nil && selectedCoin?.currentHoldings != Double(quantityText))
                 ? 1.0
                 : 0.0)
-
+            
         }.font(.headline)
     }
     
@@ -123,10 +123,13 @@ extension PortfolioView {
     }
     
     private func saveButtonPressed() {
-        guard let coin = selectedCoin else {return}
+        guard
+            let coin = selectedCoin,
+            let amount = Double(quantityText)
+        else { return }
         
         // Save to portfolio To do
-        
+        vm.updatePortfolio(coin: coin, amount: amount)
         
         // Show checkmark
         withAnimation(.easeIn) {

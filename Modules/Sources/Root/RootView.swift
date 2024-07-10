@@ -10,7 +10,7 @@ public struct RootView: View {
     @StateObject private var vm = HomeViewModel()
     
     public init() {
-        ThemeManager.shared.setTheme(.summer)
+        ThemeManager.shared.setTheme(.autumn)
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.theme.ctAccent)] // Set color of natigation bar titles
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.theme.ctAccent)]
     }

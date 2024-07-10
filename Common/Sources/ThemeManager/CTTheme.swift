@@ -26,11 +26,13 @@ public class ThemeManager {
 public enum CTThemes {
     case midnight
     case summer
+    case autumn
     
     var selectedTheme: CTThemeProtocol {
         switch self {
         case .midnight: MidnightTheme()
         case .summer: SummerTheme()
+        case .autumn: AutumnTheme()
         }
     }
 }
@@ -42,5 +44,10 @@ public struct MidnightTheme: CTThemeProtocol {
 
 public struct SummerTheme: CTThemeProtocol {
     public let color: CTColorProtocol = SummerThemeColor()
+    public let dimensions: CTDimensionsProtocol = CTDimensions()
+}
+
+public struct AutumnTheme: CTThemeProtocol {
+    public let color: CTColorProtocol = AutumnThemeColor()
     public let dimensions: CTDimensionsProtocol = CTDimensions()
 }
