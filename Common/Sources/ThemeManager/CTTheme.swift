@@ -8,7 +8,7 @@
 import SwiftUI
 
 public class ThemeManager {
-    public static let shared = ThemeManager() // Singleton
+    public static let shared = ThemeManager() // Singleton, could be a problem if other places in the app are setting a theme. Could lead to race conditions
     
     private init() {}
     
