@@ -29,6 +29,7 @@ let package = Package(
         .target(name: "Common"),
         .target(name: "Models"),
         .target(name: "Services", dependencies: ["Models"]),
-        .target(name: "Components", dependencies: ["ThemeManager", "Common", "Models", "Services"])
+        .target(name: "Components", dependencies: ["ThemeManager", "Common", "Models", "Services"]),
+//        .testTarget(name: "ServicesMock", dependencies: ["Services"]),
     ]
 )

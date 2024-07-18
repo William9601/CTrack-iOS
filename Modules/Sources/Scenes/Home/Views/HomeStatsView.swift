@@ -22,7 +22,7 @@ struct HomeStatsView: View {
                     .frame(width: UIScreen.main.bounds.width / 3)
             }
         }.frame(width: UIScreen.main.bounds.width,
-                alignment: showPortfolio ? .trailing : .leading)
+                alignment: showPortfolio ? .trailing : .leading) // The Portfolio Value is outside the frame. Once we change the alignment to trailing, it slides it into the screen
     }
 }
 

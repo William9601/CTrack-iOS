@@ -8,19 +8,7 @@
 import Combine
 import Foundation
 
-class NetworkingManager {
-    
-    enum NetworkingError: LocalizedError {
-        case badURLResponse(url: URL)
-        case unknown
-        
-        var errorDescription: String? {
-            switch self {
-            case .badURLResponse(url: let url): "Bad response from URL: \(url)"
-            case .unknown: "Unknown error occured"
-            }
-        }
-    }
+class NetworkingManager: NetworkingManagerProtocol {
     
     static func download(url: URL) -> AnyPublisher<Data, Error> { // By making it static we don't need to initialise the class. We can just call `NetworkingManager.download`
         return URLSession.shared.dataTaskPublisher(for: url) // 3- Get the data from the URL
@@ -44,6 +32,18 @@ class NetworkingManager {
             break
         case .failure(let error):
             print(error.localizedDescription) // 6- If there's an error it will print it out
+        }
+    }
+}
+
+enum NetworkingError: LocalizedError {
+    case badURLResponse(url: URL)
+    case unknown
+    
+    var errorDescription: String? {
+        switch self {
+        case .badURLResponse(url: let url): "Bad response from URL: \(url)"
+        case .unknown: "Unknown error occured"
         }
     }
 }

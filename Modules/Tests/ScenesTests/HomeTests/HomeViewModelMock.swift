@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  HomeViewModelMock.swift
+//
 //
 //  Created by William von Arend on 16/07/2024.
 //

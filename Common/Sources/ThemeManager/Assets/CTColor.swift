@@ -28,14 +28,6 @@ public struct SummerThemeColor: CTColorProtocol {
     public let ctSecondaryText = Color("SecondaryTextColor")
 }
 
-//public struct AutumnThemeColor: CTColorProtocol {
-//    public let ctAccent = Color(red: 211/255, green: 84/255, blue: 0/255)
-//    public let ctBackgroundColor = Color(red: 243/255, green: 156/255, blue: 18/255)
-//    public let ctGreen = Color(red: 39/255, green: 174/255, blue: 96/255)
-//    public let ctRed = Color(red: 192/255, green: 57/255, blue: 43/255)
-//    public let ctSecondaryText = Color(red: 127/255, green: 140/255, blue: 141/255)
-//}
-
 public struct AutumnThemeColor: CTColorProtocol {
     public let ctAccent = Color(red: 205/255, green: 92/255, blue: 92/255) // Indian Red
     public let ctBackgroundColor = Color(red: 250/255, green: 235/255, blue: 215/255) // Antique White

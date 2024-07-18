@@ -53,5 +53,8 @@ final class HomeViewModelTests: XCTestCase {
         
         XCTAssertTrue(filteredCoins.count == 0)
     }
+    
+    // MARK: mapGlobalMarketData
+    
 
 }

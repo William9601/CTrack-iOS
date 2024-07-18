@@ -26,6 +26,7 @@ public class HomeViewModel: ObservableObject {
     
     public init() {
         addSubscribers()
+
     }
     
     func addSubscribers() {
@@ -64,6 +65,7 @@ public class HomeViewModel: ObservableObject {
                 self?.portfolioCoins = returnedCoins
             }
             .store(in: &cancellables)
+        
     }
     
     func updatePortfolio(coin: CoinModel, amount: Double) {
