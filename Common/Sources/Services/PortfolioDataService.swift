@@ -9,14 +9,11 @@ import CoreData
 import Models
 
 public class PortfolioDataService {
-    private let container: NSPersistentContainer
-    private let containerName: String = "PortfolioContainer"
     private let entityName: String = "PortfolioEntity"
     
     @Published public var savedEntities: [PortfolioEntity] = []
     
     public init() {
-        container = NSPersistentContainer(name: containerName)
         container.loadPersistentStores{ (_, error) in
             if let error = error {
                 print("Error loading Core Data! \(error)")

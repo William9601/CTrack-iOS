@@ -162,8 +162,6 @@ import Foundation
      "updated_at": 1620607846
    }
  }
- 
- 
  */
 
 public struct GlobalData: Codable {
@@ -173,6 +171,16 @@ public struct GlobalData: Codable {
 public struct MarketDataModel: Codable {
     public let totalMarketCap, totalVolume, marketCapPercentage: [String: Double]
     public let marketCapChangePercentage24HUsd: Double
+    
+    public init(totalMarketCap: [String : Double], 
+                totalVolume: [String : Double],
+                marketCapPercentage: [String : Double],
+                marketCapChangePercentage24HUsd: Double) {
+        self.totalMarketCap = totalMarketCap
+        self.totalVolume = totalVolume
+        self.marketCapPercentage = marketCapPercentage
+        self.marketCapChangePercentage24HUsd = marketCapChangePercentage24HUsd
+    }
     
     enum CodingKeys: String, CodingKey {
         case totalMarketCap = "total_market_cap"

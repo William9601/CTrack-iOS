@@ -7,12 +7,15 @@
 
 import SwiftUI
 import Root
+import Services
 
 @main
 struct CTrack_iOSApp: App {
+    let marketDataService = MarketDataService()
+    
     var body: some Scene {
         WindowGroup {
-            RootView()
+            RootView(marketDataService: marketDataService)
         }
     }
 }

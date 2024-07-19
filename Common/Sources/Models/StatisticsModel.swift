@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct StatisticsModel: Identifiable {
+public struct StatisticsModel: Identifiable, Equatable {
     public let id = UUID().uuidString
     public let title: String
     public let value: String

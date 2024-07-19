@@ -13,18 +13,17 @@ import Services
 public class HomeViewModel: ObservableObject {
     
     @Published var statistics: [StatisticsModel] = []
-    
     @Published var allCoins: [CoinModel] = []
     @Published var portfolioCoins: [CoinModel] = []
-    
     @Published var searchText = ""
     
     private let coinDataService = CoinDataService()
-    private let marketDataService = MarketDataService()
+    private let marketDataService: MarketDataServiceProtocol
     private let portfolioDataService = PortfolioDataService()
     private var cancellables = Set<AnyCancellable>()
     
-    public init() {
+    public init(marketDataService: MarketDataServiceProtocol) {
+        self.marketDataService = marketDataService
         addSubscribers()
 
     }
@@ -41,7 +40,7 @@ public class HomeViewModel: ObservableObject {
             .store(in: &cancellables)
         
         // Updates market data
-        marketDataService.$marketData
+        marketDataService.marketData
             .map(mapGlobalMarketData)
             .sink { [weak self] (returnedStats) in
                 self?.statistics = returnedStats
