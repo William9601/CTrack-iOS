@@ -25,7 +25,6 @@ public class HomeViewModel: ObservableObject {
     public init(marketDataService: MarketDataServiceProtocol) {
         self.marketDataService = marketDataService
         addSubscribers()
-
     }
     
     func addSubscribers() {

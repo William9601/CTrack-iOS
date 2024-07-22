@@ -33,7 +33,7 @@ public let container: NSPersistentContainer = {
     // Initialize the container with the model name and managed object model
     let container = NSPersistentContainer(name: modelName, managedObjectModel: managedObjectModel)
     
-    // Load the persistent stores
+    // Load the persistent stores. I do this in the PortfolioDataService
 //    container.loadPersistentStores { storeDescription, error in
 //        if let error = error {
 //            fatalError("Unable to load persistent stores: \(error)")
