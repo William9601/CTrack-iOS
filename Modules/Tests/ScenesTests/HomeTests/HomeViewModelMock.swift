@@ -17,7 +17,15 @@ struct HomeViewModelMock {
         CoinModel(id: "cardano", symbol: "ada", name: "Cardano", image: "", currentPrice: 1, marketCap: 32000000000, marketCapRank: 5, fullyDilutedValuation: nil, totalVolume: 5000000000, high24H: 1.1, low24H: 0.9, priceChange24H: 0.02, priceChangePercentage24H: 2, marketCapChange24H: 640000000, marketCapChangePercentage24H: 2, circulatingSupply: 32000000000, totalSupply: 45000000000, maxSupply: 45000000000, ath: 2, athChangePercentage: -50, athDate: nil, atl: 0.02, atlChangePercentage: 4900, atlDate: nil, lastUpdated: nil, sparklineIn7D: nil, priceChangePercentage24HInCurrency: nil, currentHoldings: nil)
     ]
   
-    static var stats: MarketDataModel? = MarketDataModel(totalMarketCap: ["btc": 43945962.151456155], totalVolume: ["btc": 5838405.376372819], marketCapPercentage: ["btc": 42.56418169927073,], marketCapChangePercentage24HUsd: 0.5446264306552537)
+    static var marketData: MarketDataModel = MarketDataModel(totalMarketCap: ["btc": 43945962.151456155], totalVolume: ["btc": 5838405.376372819], marketCapPercentage: ["btc": 42.56418169927073,], marketCapChangePercentage24HUsd: 0.5446264306552537)
+        
+    static var stats: [StatisticsModel] = [
+        StatisticsModel(title: "Market Cap", value: marketData.marketCap, percentageChange: marketData.marketCapChangePercentage24HUsd),
+        StatisticsModel(title: "24 hour Volume", value: marketData.volume),
+        StatisticsModel(title: "BTC Dominance", value: marketData.btcDominance),
+        StatisticsModel(title: "Portfolio Value", value: "$0.00", percentageChange: 0)
+        
+    ]
 }
 
 class MarketDataServiceMock: MarketDataServiceProtocol {

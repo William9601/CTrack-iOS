@@ -66,11 +66,14 @@ final class HomeViewModelTests: XCTestCase {
     }
     
     func test_HomeViewModel_mapGlobalMarketData_statisticsArrayContainsMarkedData() {
-        let marketDataModel = HomeViewModelMock.stats
+        let marketDataModel = HomeViewModelMock.marketData
         marketDataServiceMock.marketData.value = marketDataModel
         
         XCTAssertEqual(sut.statistics.count, 4)
-//        XCTAssertEqual(result[0], StatisticsModel(title: "Market Cap", value: "43945962.151456155", percentageChange: 0.5446264306552537), "Expected statistics model to match \(result)")
+        XCTAssertEqual(sut.statistics[0].value, HomeViewModelMock.stats[0].value)
+        XCTAssertEqual(sut.statistics[1].value, HomeViewModelMock.stats[1].value)
+        XCTAssertEqual(sut.statistics[2].value, HomeViewModelMock.stats[2].value)
+        XCTAssertEqual(sut.statistics[3].value, HomeViewModelMock.stats[3].value)
     }
 
 }
