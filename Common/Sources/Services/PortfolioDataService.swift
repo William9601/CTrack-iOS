@@ -11,7 +11,7 @@ import Models
 public class PortfolioDataService {
     private let entityName: String = "PortfolioEntity"
     
-    @Published public var savedEntities: [PortfolioEntity] = []
+    @Published public var savedEntities: [PortfolioEntityMO] = []
     
     public init() {
         container.loadPersistentStores{ (_, error) in
@@ -41,7 +41,7 @@ public class PortfolioDataService {
     // MARK: PRIVATE
     
     private func getPortfolio() {
-        let request = NSFetchRequest<PortfolioEntity>(entityName: entityName)
+        let request = NSFetchRequest<PortfolioEntityMO>(entityName: entityName)
         do {
             savedEntities = try container.viewContext.fetch(request)
         } catch let error {
@@ -50,17 +50,17 @@ public class PortfolioDataService {
     }
     
     private func add(coin: CoinModel, amount: Double) {
-        let entity = PortfolioEntity(context: container.viewContext)
+        let entity = PortfolioEntityMO(context: container.viewContext)
         entity.coinID = coin.id
         applyChanges()
     }
     
-    private func update(entity: PortfolioEntity, amount: Double) { // If we already have an entity we can update it
+    private func update(entity: PortfolioEntityMO, amount: Double) { // If we already have an entity we can update it
         entity.amount = amount
         applyChanges()
     }
     
-    private func delete(entity: PortfolioEntity) {
+    private func delete(entity: PortfolioEntityMO) {
         container.viewContext.delete(entity)
         applyChanges()
     }
