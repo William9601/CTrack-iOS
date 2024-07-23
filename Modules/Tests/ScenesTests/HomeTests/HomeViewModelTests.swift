@@ -17,7 +17,7 @@ final class HomeViewModelTests: XCTestCase {
     private var marketDataServiceMock: MarketDataServiceMock!
     
     override func setUp() {
-        marketDataServiceMock = .init()
+        marketDataServiceMock = .init() // Shorthand for writing marketDataServiceMock = MarketDataServiceMock()
         sut = HomeViewModel(marketDataService: marketDataServiceMock)
     }
     

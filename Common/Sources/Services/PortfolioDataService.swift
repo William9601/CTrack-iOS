@@ -52,6 +52,7 @@ public class PortfolioDataService {
     private func add(coin: CoinModel, amount: Double) {
         let entity = PortfolioEntityMO(context: container.viewContext)
         entity.coinID = coin.id
+        entity.amount = amount
         applyChanges()
     }
     
@@ -69,7 +70,7 @@ public class PortfolioDataService {
         do {
             try container.viewContext.save()
         } catch let error {
-            print("Error saving to Core Data")
+            print("Error saving to Core Data. \(error)")
         }
     }
     

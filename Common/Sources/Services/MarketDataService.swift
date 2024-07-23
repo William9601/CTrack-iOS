@@ -11,6 +11,7 @@ import Models
 
 public protocol MarketDataServiceProtocol {
     var marketData: CurrentValueSubject<MarketDataModel?, Never> { get }
+    func getData()
 }
 
 public class MarketDataService: MarketDataServiceProtocol {
@@ -24,7 +25,7 @@ public class MarketDataService: MarketDataServiceProtocol {
         getData()
     }
     
-    private func getData() {
+    public func getData() {
         guard let url = URL(string: APIConstants.getMarketDataURL)
         else { return }
         
