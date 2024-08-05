@@ -12,9 +12,8 @@ public struct CTCard<Content: View>: View {
     var content: Content
     private let size: CTCardSize
     
-    public init(
-        size: CTCardSize = .regular,
-        @ViewBuilder content: () -> Content) {
+    public init(size: CTCardSize = .regular,
+                @ViewBuilder content: () -> Content) {
             self.size = size
             self.content = content()
         }

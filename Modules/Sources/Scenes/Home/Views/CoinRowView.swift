@@ -21,7 +21,9 @@ struct CoinRowView: View {
                 centerColumn
             }
             rightColumn
-        }
+        }.background(
+            Color.theme.ctBackgroundColor.opacity(0.001) //Makes the coin row clickable
+        )
     }
 }
 

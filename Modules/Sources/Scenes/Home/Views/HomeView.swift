@@ -7,11 +7,14 @@
 
 import SwiftUI
 import Components
+import Models
 
 public struct HomeView: View {
     @EnvironmentObject private var vm: HomeViewModel // Because we use the HomeViewModel in many views, instad of passing it from view to view with an ObservableObject, we will instead put it in the environment as an EnvironmentObject.
     @State private var showPortfolio = false // animate right
     @State private var showPortfolioView: Bool = false // new sheet
+    @State private var selectCoin: CoinModel? = nil
+    @State private var showDetailView: Bool = false
     
     public init() {}
     
@@ -47,6 +50,18 @@ public struct HomeView: View {
                 Spacer(minLength: 0)
             }
         }
+        .background(
+//            NavigationLink(value: $showDetailView, label: {
+//                EmptyView()
+//            })
+            
+            NavigationLink(
+                destination: DetailLoadingView(coin: $selectCoin),
+                isActive: $showDetailView,
+                label: {
+                    EmptyView()
+                })
+        )
     }
 }
 
@@ -91,9 +106,17 @@ extension HomeView {
                                          leading: .ctDimensions.space0,
                                          bottom: .ctDimensions.space4,
                                          trailing: .ctDimensions.space4))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
             }
         }
         .listStyle(.plain)
+    }
+    
+    private func segue(coin: CoinModel) {
+        selectCoin = coin
+        showDetailView.toggle()
     }
     
     private var portfolioCoinsList: some View {
@@ -104,6 +127,9 @@ extension HomeView {
                                          leading: .ctDimensions.space0,
                                          bottom: .ctDimensions.space4,
                                          trailing: .ctDimensions.space4))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
             }
         }
         .listStyle(.plain)
