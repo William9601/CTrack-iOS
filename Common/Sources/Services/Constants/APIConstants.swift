@@ -12,7 +12,7 @@ struct APIConstants {
     
     static let getMarketDataURL = "https://api.coingecko.com/api/v3/global"
     
-    static func getCoinDetailURL(coin: CoinModel) -> String {
-        return "https://api.coingecko.com/api/v3/coins/\(coin.id)?localization=false&tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false"
-    }
+//    static func getCoinDetailURL(coin: CoinModel) -> String {
+//        return "https://api.coingecko.com/api/v3/coins/\(coin.id)?localization=false&tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false"
+//    }
 }

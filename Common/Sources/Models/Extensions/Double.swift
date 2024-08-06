@@ -94,7 +94,7 @@ extension Double {
     /// Convert 123456789012 to 123.45Bn
     /// Convert 12345678901234 to 12.34Tr
     /// ```
-    func formattedWithAbbreviations() -> String {
+    public func formattedWithAbbreviations() -> String {
         let num = abs(Double(self))
         let sign = (self < 0) ? "-" : ""
 

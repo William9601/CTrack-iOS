@@ -99,8 +99,8 @@ import Foundation
 
 public struct CoinDetailModel: Codable {
     let id, symbol, name: String?
-    let blockTimeInMinutes: Int?
-    let hashingAlgorithm: String?
+    public let blockTimeInMinutes: Int?
+    public let hashingAlgorithm: String?
     let description: Description?
     let links: Links?
     
